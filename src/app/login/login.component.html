@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Animated login form</title>
+        <link rel="stylesheet " href="login.component.css">
+        <style>
+            body{
+                background: burlywood;
+            }
+        </style>
+    </head>
+    <body >
+
+        <form class="box" [formGroup]="loginForm"  (ngSubmit)="login()">
+            
+            <h1>login</h1>
+            <input   type="email"  formControlName="email" placeholder="Email adress" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+        <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is required</span>
+        <input type="password" name="" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*password Id is required</span>
+
+
+            <input type="submit" [disabled]="!loginForm.valid" name=""(click)="login()" value="login">
+        <a routerLink="/signup">new user ? click to signup</a></form>
+    </body>
+</html>

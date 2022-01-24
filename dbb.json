@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "firstName": "mohamed amine",
+      "email": "mohamed@gmail.com",
+      "mobile": null,
+      "salary": null
+    },
+    {
+      "id": 6,
+      "firstName": "jezia",
+      "lastName": "jezia",
+      "email": "lefkihlefkih123@gmail.com",
+      "mobile": "58287043",
+      "salary": ""
+    },
+    {
+      "id": 7,
+      "firstName": "islem",
+      "lastName": "islem",
+      "email": "islem@gmail.com",
+      "mobile": "56215489",
+      "salary": null
+    },
+    {
+      "id": 8,
+      "firstName": "iyad",
+      "lastName": "iyad",
+      "email": "iyad@gmail.com",
+      "mobile": "96879456",
+      "salary": null
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullname": "jezia",
+      "email": "",
+      "password": "",
+      "mobile": 58287043,
+      "id": 1
+    },
+    {
+      "fullname": "jezia",
+      "email": "",
+      "password": "",
+      "mobile": 58287043,
+      "id": 2
+    },
+    {
+      "fullname": "jezia fkih",
+      "email": "",
+      "password": "",
+      "mobile": 58287043,
+      "id": 3
+    },
+    {
+      "fullname": "jezia fkih",
+      "email": "",
+      "password": "",
+      "mobile": 58287043,
+      "id": 4
+    },
+    {
+      "fullname": "ahmed",
+      "email": "",
+      "password": "",
+      "mobile": 58245156,
+      "id": 5
+    },
+    {
+      "fullname": "jj",
+      "email": "",
+      "password": "",
+      "mobile": 58222222,
+      "id": 6
+    },
+    {
+      "fullname": "amine",
+      "email": "",
+      "password": "",
+      "mobile": 4885858,
+      "id": 7
+    },
+    {
+      "fullname": "azz",
+      "email": "aze@aze.er",
+      "password": "123456",
+      "mobile": 45636,
+      "id": 8
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

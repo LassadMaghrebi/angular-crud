@@ -1,0 +1,14 @@
+<form class="box" [formGroup]="signupForm" (ngSubmit)="signUp()" >
+            
+    <h1>signup</h1>
+    <input   type="text" formControlName="fullname" placeholder="Full name" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+
+    <input   type="number"formControlName="mobile"  placeholder="mobile number" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+
+    <input   type="email"  formControlName="email" placeholder="Email adress" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+
+<input type="password" name="" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+    <input type="submit" name="" value="signup">
+       <a  style="color:white" routerLink="/login">Already registred ? click to login</a></form> 
+
