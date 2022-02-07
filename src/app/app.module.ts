@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './sha/auth.guard';
+import { AuthService } from './sha/auth.service';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
@@ -22,7 +24,7 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

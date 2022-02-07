@@ -7,6 +7,7 @@ import {map} from 'rxjs';
 export class ApiService {
 
   constructor( private _http:HttpClient) { }
+  
   //post get put delete method
   postEmployee(data:any){
     return this._http.post<any>("http://localhost:3000/posts",data).pipe(

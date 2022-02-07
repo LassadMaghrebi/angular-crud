@@ -88,6 +88,13 @@
       "password": "123456",
       "mobile": 45636,
       "id": 8
+    },
+    {
+      "fullname": "amine",
+      "email": "bay@gmail.com",
+      "password": "azerty",
+      "mobile": 1258588,
+      "id": 9
     }
   ],
   "profile": {

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, Validators} from "@angular/forms"
 import { Router } from '@angular/router';
+import { AuthService } from '../sha/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
 
   public loginForm !:FormGroup;
-  constructor(private formBuilder:FormBuilder,private http:HttpClient,private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit {
       password:['',Validators.required]
     })
   }
+  
   login(){
+    this.auth.isauth=true
     this.http.get<any>("http://localhost:3000/signupUsers")
     .subscribe(res=>{
       const user=res.find((a:any)=>{
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
       );
       if(user){
         alert("login success");
-        this.loginForm.reset();
+        // this.loginForm.reset();
         this.router.navigate(['/dashboard'])
       }else{
         alert("user not found");

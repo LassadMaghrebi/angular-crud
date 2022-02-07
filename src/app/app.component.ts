@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'empolyee';
+  selectedMenu:any='Home';
+
+  goTo(paramText:string){
+    this.selectedMenu=paramText
+  }
 }
