@@ -24,23 +24,68 @@
     
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <div class="dropstart">
+                <div class="dropstart" *ngIf="notifications.length!=0">
                     <a class="nav-link  position-relative p-0 m-2" id="dropdownMenuLink" (click)="vue()" data-bs-toggle="dropdown" style="cursor:pointer;">
                         <i class="bi bi-bell" style="font-size: 1.5rem;"></i>
                         <small ><span class="position-absolute  translate-middle badge rounded-pill bg-danger">{{notificationsNumber}}</span></small>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
-                      <li class="dropdown-item " style="cursor: pointer;" *ngFor="let n of notifications">
+                      <!-- <li class="dropdown-item " style="cursor: pointer;" *ngFor="let n of notifications">
                         {{n.type}}
-                        <div *ngIf="n.type=='demande de conge'&&n.accept==null">
-                          <button type="button" class="btn btn-primary btn-sm ms-1" style="margin: 0px;" (click)="accept(n)"><i class="bi bi-check-lg" ></i></button>
-                          <button type="button" class="btn btn-danger btn-sm ms-1" style="margin: 0px;" (click)="refuse(n)"><i class="bi bi-x-lg"></i></button>
-                          <i class="bi bi-eye" *ngIf="n.vue" style="color: rgb(0, 255, 106);"></i>
-                          <i class="bi bi-bell" *ngIf="!n.vue" style="color: red"></i>
+                        <div *ngIf="n.type=='demande de conge'&&n.accept==null" >
+                          <button type="button" class="btn btn-primary btn-sm ms-1 float-start" style="margin: 0px;" (click)="accept(n)"><i class="bi bi-check-lg" ></i></button>
+                          <button type="button" class="btn btn-danger btn-sm ms-1 float-start" style="margin: 0px;" (click)="refuse(n)"><i class="bi bi-x-lg"></i></button>
+                          <i class="bi bi-eye float-end " *ngIf="n.vue" style="color: rgb(0, 255, 106);"></i>
+                          <i class="bi bi-bell float-end" *ngIf="!n.vue" style="color: red"></i>
                         </div>
-
-                      </li>
+                        <div *ngIf="n.type!='demande de conge'||n.accept!=null" >
+                          <i class="bi bi-eye float-end " *ngIf="n.vue" style="color: rgb(0, 255, 106);"></i>
+                          <i class="bi bi-bell float-end" *ngIf="!n.vue" style="color: red"></i>
+                        </div>
+                      </li> -->
+                      <a href="#" class="dropdown-item" *ngFor="let n of notifications">
+                        <!-- Message Start -->
+                        <div class="d-flex" *ngIf="n.type=='demande de conge'&&n.accept==null">
+                          <img src="../../assets/avatar5.png" style="  width: 50px;height: 50px; border-radius: 50%;" >
+                          <div >
+                            <h5 class="float-right">
+                              {{n.type}}
+                              <span class="float-right text-danger" style="font-size: 1rem;"><i class="bi bi-bell"></i></span>
+                            </h5>
+                            <p class="float-right" style="font-size: 0.8rem;">{{n.cause}}
+                            </p>
+                            <p class="text-muted float-right" style="font-size: 0.7rem;"> {{n.startDate}}-{{n.endDate}}</p>
+                            <div>
+                              <button type="button" class="btn btn-primary btn-sm ms-1 float-start" style="margin: 0px;"><i class="bi bi-check-lg" ></i></button>
+                              <button type="button" class="btn btn-danger btn-sm ms-1 float-start" style="margin: 0px;" ><i class="bi bi-x-lg"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex" *ngIf="n.type!='demande de conge'||n.accept!=null">
+                          <img src="../../assets/avatar5.png" style="  width: 50px;height: 50px; border-radius: 50%;" >
+                          <div >
+                            <h5 class="float-right">
+                              {{n.type}}
+                              <span class="float-right text-danger" style="font-size: 1rem;">
+                              <div *ngIf="n.type!='demande de conge'||n.accept!=null" >
+                                <i class="bi bi-eye float-end " *ngIf="n.vue" style="color: rgb(0, 255, 106);"></i>
+                                <i class="bi bi-bell float-end" *ngIf="!n.vue" style="color: red"></i>
+                              </div>
+                              </span>
+                            </h5>
+                            <p class="float-right" style="font-size: 0.8rem;">{{n.cause}}
+                            </p>
+                            <p class="text-muted float-right" style="font-size: 0.7rem;">{{n.startDate}}-{{n.endDate}}</p>
+                          </div>
+                        </div>
+                      </a>
                     </ul>
+                </div>
+                <div class="" *ngIf="notifications.length==0">
+                    <a class="nav-link  position-relative p-0 m-2" style="cursor:pointer;">
+                        <i class="bi bi-bell" style="font-size: 1.5rem;"></i>
+                        <small ><span class="position-absolute  translate-middle badge rounded-pill bg-danger"></span></small>
+                    </a>
                 </div>
             </li>
 

@@ -21,7 +21,7 @@ export class EmployeDashboardComponent implements OnInit {
       startDate: [''],
       endDate: [''],
       vue: [false],
-      accept: [false],
+      accept: [null],
 
     })
     this.getAdmin()
@@ -35,7 +35,9 @@ export class EmployeDashboardComponent implements OnInit {
     })
   }
   submitDemande(){
-    this.DemandeForm.controls["from"].setValue(sessionStorage.getItem('userId'));
+    let u:any=sessionStorage.getItem('userId')
+    let userId=parseInt(u)
+    this.DemandeForm.controls["from"].setValue(userId);
     this.DemandeForm.controls["to"].setValue(this.admins);
     this.http.post("http://localhost:3000/notifications",this.DemandeForm.value).subscribe((res:any)=>{
     })

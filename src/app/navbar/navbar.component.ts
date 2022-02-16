@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
         res.forEach((element:any) => {
           if(element.to.indexOf(userId)!=-1&& !element.vue) this.notificationsNumber++
           if(element.to.indexOf(userId)!=-1)this.notifications.push(element)
-          console.log(element.to.indexOf(userId)!=-1)
+          console.log(this.notifications.length==0)
         });
       })
     }
