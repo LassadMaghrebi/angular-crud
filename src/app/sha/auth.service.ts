@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   isauth:boolean=false;
-  constructor( private http:HttpClient) {}
+  constructor( private http:HttpClient) {
+    this.isauth=sessionStorage.getItem('user')!=''
+    
+  }
   IsLoggedIn(){
     
     return this.isauth;

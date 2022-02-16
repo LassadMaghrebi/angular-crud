@@ -1,0 +1,7 @@
+.table-avatar{
+    border-radius: 50%;
+    display: inline;
+    width: 2.5rem;
+    vertical-align: middle;
+    border-style: none;
+}

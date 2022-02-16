@@ -1,100 +1,143 @@
 {
-  "posts": [
+  "Users": [
     {
-      "id": 5,
-      "firstName": "mohamed amine",
+      "id": 1,
+      "firstName": "mohamed ",
+      "lastName": "amine",
       "email": "mohamed@gmail.com",
-      "mobile": null,
-      "salary": null
+      "mobile": "58287043",
+      "salary": 200,
+      "password": "123",
+      "role": "Employe"
     },
     {
-      "id": 6,
+      "id": 2,
       "firstName": "jezia",
       "lastName": "jezia",
       "email": "lefkihlefkih123@gmail.com",
       "mobile": "58287043",
-      "salary": ""
+      "salary": 0,
+      "password": "123",
+      "role": "Employe"
     },
     {
-      "id": 7,
+      "id": 3,
       "firstName": "islem",
       "lastName": "islem",
       "email": "islem@gmail.com",
       "mobile": "56215489",
-      "salary": null
+      "salary": 0,
+      "password": "123",
+      "role": "Employe"
     },
     {
-      "id": 8,
-      "firstName": "iyad",
-      "lastName": "iyad",
-      "email": "iyad@gmail.com",
-      "mobile": "96879456",
-      "salary": null
+      "id": 4,
+      "firstName": "Lassad",
+      "lastName": "maghrebi",
+      "email": "lassad@gmail.com",
+      "mobile": "56215489",
+      "salary": 1,
+      "password": "123",
+      "role": "Admin"
     }
   ],
-  "signupUsers": [
+  "projects": [
     {
-      "fullname": "jezia",
-      "email": "",
-      "password": "",
-      "mobile": 58287043,
-      "id": 1
+      "id": 1,
+      "name": "minifoot",
+      "description": "design and developpement of a minifoot webapp ",
+      "team": [
+        2,
+        3
+      ],
+      "status": "done",
+      "leader": 2,
+      "startDate": "2022-02-18",
+      "endDate": "2022-05-28"
     },
     {
-      "fullname": "jezia",
-      "email": "",
-      "password": "",
-      "mobile": 58287043,
+      "name": "lllllllllllllllllllll",
+      "description": "aaaaaaaaaaaaaaaaaa",
+      "status": "blocked",
+      "leader": 2,
+      "team": [
+        2,
+        3
+      ],
+      "startDate": "2022-01-18",
+      "endDate": "2022-02-09",
       "id": 2
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "from": 2,
+      "to": [
+        3
+      ],
+      "type": "demande de conge",
+      "startDate": "2022-01-18",
+      "endDate": "2022-05-28",
+      "cause": "maladie",
+      "vue": true,
+      "accept": true
     },
     {
-      "fullname": "jezia fkih",
-      "email": "",
-      "password": "",
-      "mobile": 58287043,
-      "id": 3
+      "id": 2,
+      "from": 2,
+      "to": [
+        4
+      ],
+      "type": "Acceptation de demande de conge",
+      "vue": true
     },
     {
-      "fullname": "jezia fkih",
-      "email": "",
-      "password": "",
-      "mobile": 58287043,
+      "id": 3,
+      "from": 2,
+      "to": [
+        4
+      ],
+      "type": "New Project",
+      "vue": true
+    },
+    {
+      "from": "3",
+      "to": [
+        4,
+        2
+      ],
+      "cause": "mal",
+      "startDate": "2022-02-16",
+      "endDate": "2022-02-17",
       "id": 4
     },
     {
-      "fullname": "ahmed",
-      "email": "",
-      "password": "",
-      "mobile": 58245156,
+      "from": "3",
+      "to": [
+        3,
+        4
+      ],
+      "type": "demande de conge",
+      "cause": "hgfhghghj",
+      "startDate": "2022-02-17",
+      "endDate": "2022-02-25",
+      "vue": true,
+      "accept": false,
       "id": 5
     },
     {
-      "fullname": "jj",
-      "email": "",
-      "password": "",
-      "mobile": 58222222,
+      "from": "3",
+      "to": [
+        3
+      ],
+      "type": "demande de conge",
+      "cause": "hghkjgjjh",
+      "startDate": "2022-02-10",
+      "endDate": "2022-02-26",
+      "vue": true,
+      "accept": false,
       "id": 6
-    },
-    {
-      "fullname": "amine",
-      "email": "",
-      "password": "",
-      "mobile": 4885858,
-      "id": 7
-    },
-    {
-      "fullname": "azz",
-      "email": "aze@aze.er",
-      "password": "123456",
-      "mobile": 45636,
-      "id": 8
-    },
-    {
-      "fullname": "amine",
-      "email": "bay@gmail.com",
-      "password": "azerty",
-      "mobile": 1258588,
-      "id": 9
     }
   ],
   "profile": {

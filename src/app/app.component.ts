@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'empolyee';
   selectedMenu:any='Home';
-
+  isAuth=false
+   constructor(){
+    this.isAuth=sessionStorage.getItem('user')!=null
+   }
   goTo(paramText:string){
     this.selectedMenu=paramText
   }

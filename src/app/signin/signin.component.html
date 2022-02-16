@@ -1,0 +1,10 @@
+<form class="box" [formGroup]="loginForm"  (ngSubmit)="submit()">
+            
+    <h1>login</h1>
+    <input   type="email"  formControlName="email" placeholder="Email adress" class="form-control">
+<span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is required</span>
+<input type="password" formControlName="password" class="form-control" placeholder="Password">
+<span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*password Id is required</span>
+    <input type="submit" [disabled]="!loginForm.valid" name=""(click)="submit()" value="login">
+<a routerLink="/signup">new user ? click to signup</a>
+</form>

@@ -10,7 +10,7 @@ export class ApiService {
   
   //post get put delete method
   postEmployee(data:any){
-    return this._http.post<any>("http://localhost:3000/posts",data).pipe(
+    return this._http.post<any>("http://localhost:3000/users",data).pipe(
       map(
         (res=>{
           return res;
@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   getEmployee(){
-    return this._http.get<any>("http://localhost:3000/posts").pipe(
+    return this._http.get<any>("http://localhost:3000/users").pipe(
       map(
         (res=>{
           return res;
@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   putEmployee(data:any,id:number){
-    return this._http.put<any>("http://localhost:3000/posts/"+id,data).pipe(
+    return this._http.put<any>("http://localhost:3000/users/"+id,data).pipe(
       map(
         (res=>{
           return res;
@@ -39,13 +39,7 @@ export class ApiService {
     )
   }
   deleteEmployee(id:number){
-    return this._http.delete<any>("http://localhost:3000/posts/"+id).pipe(
-      map(
-        (res=>{
-          return res;
-        })
-      )
-    )
+    return this._http.delete<any>("http://localhost:3000/users/"+id)
   }
 
 }

@@ -1,0 +1,226 @@
+<div class="card text-center">
+  <div class="card-header">
+    Welcome {{username}}
+  </div>
+  <div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Project</button>
+  </div>
+  <div class="card-footer text-muted">
+    {{today.toLocaleDateString()}}
+  </div>
+</div>
+<div class="row px-1">
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-info" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{comingProject}}</h3>
+        <p>New Projects</p>
+      </div>
+      <a [routerLink]="['/projects/encours']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-success" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{doneProject}}</h3>
+        <p>Done Projects</p>
+      </div>
+      <a [routerLink]="['/projects/done']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-warning" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{blockedProject}}</h3>
+        <p>blocked Projects</p>
+      </div>
+      <a [routerLink]="['/projects/blocked']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #000;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-danger" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{retardProject}}</h3>
+        <p>Retard Projects</p>
+      </div>
+      <a [routerLink]="['/projects/enretard']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="card bg-secondary" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{projects.length}}</h3>
+        <p>All Projects</p>
+      </div>
+      <a [routerLink]="['/projects']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-header">
+    Welcome {{username}}
+  </div>
+  <div class="">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add New Employe</button>
+  </div>
+  <div class="card-footer text-muted">
+    {{today.toLocaleDateString()}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-info" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{employes.length}}</h3>
+        <p>New Employe</p>
+      </div>
+      <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-success" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{employes.length}}</h3>
+        <p>Active Employes</p>
+      </div>
+      <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-warning" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{employes.length}}</h3>
+        <p>Employes en Conje</p>
+      </div>
+      <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #000;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 my-1">
+    <div class="card bg-danger" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{retardProject}}</h3>
+        <p>Inactive Employes</p>
+      </div>
+      <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="card bg-secondary" style="color: #fff!important;">
+      <div class="inner">
+        <h3>{{employes.length}}</h3>
+        <p>All Employes</p>
+      </div>
+      <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal add project-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="projectForm" >
+            <div class="form-group">
+              <label for="inputName">Project Name</label>
+              <input type="text" id="inputName" formControlName="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Project Description</label>
+                <textarea id="inputDescription" formControlName="description" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="inputStatus">Status</label>
+                  <select id="inputStatus" formControlName="status" class="form-control custom-select">
+                  <option>En Cours</option>
+                  <option>Blocked</option>
+                  <option>En Retard</option>
+                  <option>Done</option>
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStatus">Project Leader</label>
+                    <select id="inputStatus" formControlName="leader" class="form-control custom-select">
+                    <option selected disabled>Select one</option>
+                    <option *ngFor="let e of employes" value="{{e.id}}">{{e.firstName}}</option>
+                    </select>
+                    </div>
+
+                <div class="form-group">
+                  <label for="inputName" >Start Date</label>
+                  <input type="date" formControlName="startDate" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">End date</label>
+                    <input type="date" formControlName="endDate" class="form-control">
+                    </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="submitProject()" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal add Employe-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="employeForm" >
+            <div class="form-group">
+              <label for="inputName">Employe fname</label>
+              <input type="text" id="inputName" formControlName="firstName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Employe lname</label>
+                <input type="text" id="inputName" formControlName="lastName" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" formControlName="email" class="form-control">
+                  </div>
+                <div class="form-group">
+                  <label for="email">Mobile Number</label>
+                  <input type="number" id="mobile" formControlName="mobile" class="form-control">
+                  </div>
+                <div class="form-group">
+                  <label for="email">salary</label>
+                  <input type="number" id="salary" formControlName="salary" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" formControlName="password"  class="form-control" id="exampleInputPassword1">
+                  </div>
+                <div class="form-group">
+                  <label for="inputStatus">Role</label>
+                  <select id="inputStatus" formControlName="role" class="form-control custom-select">
+                  <option>Admin</option>
+                  <option>Employe</option>
+                  </select>
+                  </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" (click)="submitEmploye()" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+

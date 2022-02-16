@@ -17,14 +17,13 @@ public signupForm !:FormGroup;
       email:[''],
       password:[''],
       mobile:['']
-
     })
   }
   signUp(){
-this.http.post<any>("http://localhost:3000/signupUsers/",this.signupForm.value).subscribe(res=>{
+this.http.post<any>("http://localhost:3000/users/",this.signupForm.value).subscribe(res=>{
   alert("signup successfull");
   this.signupForm.reset();
-  this.router.navigate(['login']);},err=>{
+  this.router.navigate(['/login']);},err=>{
     alert("something went wrong")
   }
 )

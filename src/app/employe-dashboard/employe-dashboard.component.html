@@ -1,0 +1,43 @@
+<div class="card text-center">
+    <div class="card-header">
+      Welcome Lassad
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">Demande de Conge</button>
+    </div>
+    <div class="card-footer text-muted">
+      {{today.toLocaleDateString()}}
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="DemandeForm" >
+                <div class="form-group">
+                    <label for="inputDescription">Cause De Conge</label>
+                    <textarea id="inputDescription" formControlName="cause" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName" >Start Date</label>
+                        <input type="date" formControlName="startDate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputName">End date</label>
+                          <input type="date" formControlName="endDate" class="form-control">
+                          </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" (click)="submitDemande()" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

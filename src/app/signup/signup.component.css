@@ -8,6 +8,7 @@ body{
 
 }
 .box{
+    border-radius: 25px;
     width: 300px;
     padding: 40px;
     position: absolute;
@@ -22,23 +23,7 @@ body{
     text-transform: initial;
     font-weight: 500;
 }
-.box input[type="text"]{
-    border:0;
-    background: none;
-    display: block;
-    margin:20px auto;
-    text-align:center;
-    border:2px solid yellow;
-    padding:14px 10px;
-    width:200px;
-    outline:none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-
-
-}
-.box  input[type="password"]{
+.box  input{
     border:0;
     background: none;
     display: block;
@@ -53,59 +38,10 @@ body{
     transition: 0.25s;
 
 }
-.box  input[type="number"]{
-    border:0;
-    background: none;
-    display: block;
-    margin:20px auto;
-    text-align:center;
-    border:2px solid yellow;
-    padding:14px 10px;
-    width:200px;
-    outline:none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-
-}
-
-
-.box  input[type="email"]{
-    border:0;
-    background: none;
-    display: block;
-    margin:20px auto;
-    text-align:center;
-    border:2px solid yellow;
-    padding:14px 10px;
-    width:200px;
-    outline:none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-
-}
-.box  input[type="text"]:focus,.box  input[type="password"]:focus,.box  input[type="number"]:focus ,.box  input[type="mail"]:focus{
-    width: 250px;
+.box  input:focus{
+    width: 280px;
+    transform: translate(-30px);
     border-color:white;
-
-
-}
-
-.box input[type="submit"]{
-    border:0;
-    background: none;
-    display: block;
-    margin:20px auto;
-    text-align:center;
-    border:2px solid yellow;
-    padding:14px 40px;
-    width:200px;
-    outline:none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
 
 
 }
