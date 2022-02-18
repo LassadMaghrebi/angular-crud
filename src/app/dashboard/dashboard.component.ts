@@ -41,12 +41,15 @@ export class DashboardComponent implements OnInit {
   }
   today=new Date()
   employes:Employe[]=[]
+  projects:Project[]=[]
   comingProject=0
   blockedProject=0
   retardProject=0
   doneProject=0
-  projects:Project[]=[]
   username:any
+  visible=false
+  teams:Employe[]=[]
+  emps:any=[]
   getProjects(){
     this.username=sessionStorage.getItem('user')
     this.http.get("http://localhost:3000/projects").subscribe((res:any)=>{
@@ -67,92 +70,51 @@ export class DashboardComponent implements OnInit {
     })
   }
   submitProject(){
-    console.log(this.projectForm.value)
+    let u:any=sessionStorage.getItem('userId')
+    let userId=parseInt(u)
+    this.teams.forEach(element => {
+      this.projectForm.value.team.push(element.id)
+    })
+    let notification={
+      from:userId,
+      to:this.projectForm.value.team,
+      type: "New Project",
+      startDate: this.projectForm.value.startDate,
+      endDate: this.projectForm.value.endDate,
+      vue:false
+    }
+    this.http.post("http://localhost:3000/notifications",notification).subscribe(res=>{
+
+    })
+    this.projectForm.value.leader=parseInt(this.projectForm.value.leader)
     this.http.post("http://localhost:3000/projects",this.projectForm.value).subscribe((res:any)=>{
     })
     this.projectForm.reset()
   }
   submitEmploye(){
-    console.log(this.employeForm.value)
     this.http.post("http://localhost:3000/Users",this.employeForm.value).subscribe((res:any)=>{
     })
   }
-  /*postEmployeeDetails() {
-    this.employe.firstName = this.empDetail.value.firstName;
-    this.employe.lastName = this.empDetail.value.firstName;
-    this.employe.email = this.empDetail.value.email;
-    this.employe.mobile = this.empDetail.value.mobile;
-    this.employe.salary = this.empDetail.value.salary;
-    this.employe.role = this.empDetail.value.role;
-    this.api.postEmployee(this.employe).subscribe({
-      next: (v) => {
-      },
-      error: (e) => {
-        console.log(e)
-        alert("error")
-      },
-      complete: () => {
-        this.getEmployee();
-        this.empDetail.reset();
+  blure(){
+    this.emps=[]
+    this.visible=false
+  }
+  input(e:any){
+    this.emps=[]
+    this.employes.forEach(element => {
+      if(element.firstName.search(e.target.value)!=-1){
+        this.emps.push(element)
+        this.visible=true
       }
+    });
+  }
+  addChip(e:Employe){
+    if(this.teams.indexOf(e)==-1||this.teams.length==0){
+      this.visible=false
+      this.teams.push(e)
     }
-    )
   }
-  getEmployee() {
-    this.api.getEmployee().subscribe(res => {
-      this.employees = res;
-    })
+  removeChip(e:Employe){
+    this.teams.splice(this.teams.indexOf(e),1)
   }
-  add(){
-    this.empDetail.reset()
-  }
-  deleteEmployee(data: any) {
-    this.api.deleteEmployee(data.id).subscribe({
-      next: (v) => {
-        console.log(v)
-      },
-      error: (e) => {
-        console.log(e)
-        alert("error")
-      },
-      complete: () => {
-        this.getEmployee();
-        this.empDetail.reset();
-      }
-    })
-  }
-
-
-  editEmployee(data: Employe) {
-    this.employe.id = data.id;
-    this.empDetail.controls["firstName"].setValue(data.firstName);
-    this.empDetail.controls["lastName"].setValue(data.lastName);
-    this.empDetail.controls["email"].setValue(data.email);
-    this.empDetail.controls["mobile"].setValue(data.mobile);
-    this.empDetail.controls["salary"].setValue(data.salary);
-    this.empDetail.controls["role"].setValue(data.role);
-    this.employe.id = data.id;
-
-
-  }
-  updateEmployee() {
-    this.employe.firstName = this.empDetail.value.firstName;
-    this.employe.lastName = this.empDetail.value.lasttName;
-    this.employe.email = this.empDetail.value.email;
-    this.employe.mobile = this.empDetail.value.mobile;
-    this.employe.role = this.empDetail.value.role;
-    this.employe.salary = this.empDetail.value.salary;
-
-
-
-    this.api.putEmployee(this.employe, this.employe.id).subscribe(res => {
-      this.empDetail.reset();
-      this.getEmployee();
-    })
-  }
-  logout(){
-    this.auth.isauth=false;
-    sessionStorage.clear()
-    this.router.navigate(['/login'])
-  }*/
 }

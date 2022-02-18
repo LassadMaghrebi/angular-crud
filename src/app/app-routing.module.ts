@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"projects",canActivate:[AuthGuard],component:ProjectsComponent},
   {path:"project/:id",canActivate:[AuthGuard],component:ProjectComponent},
   {path:"employes",canActivate:[AdminAuthGuard],component:EmployesComponent},
-  {path:"employeDashboard",canActivate:[AdminAuthGuard],component:EmployeDashboardComponent},
+  {path:"employeDashboard",canActivate:[AuthGuard],component:EmployeDashboardComponent},
   {path:"dashboard",canActivate:[AdminAuthGuard],component:DashboardComponent/*,
 canActivate:[AuthGuard]*/}
 ];

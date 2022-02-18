@@ -48,32 +48,33 @@
                         <div class="d-flex" *ngIf="n.type=='demande de conge'&&n.accept==null">
                           <img src="../../assets/avatar5.png" style="  width: 50px;height: 50px; border-radius: 50%;" >
                           <div >
-                            <h5 class="float-right">
-                              {{n.type}}
+                            <h6 class="float-right">
+                              {{n.username}}
                               <span class="float-right text-danger" style="font-size: 1rem;"><i class="bi bi-bell"></i></span>
-                            </h5>
-                            <p class="float-right" style="font-size: 0.8rem;">{{n.cause}}
+                            </h6>
+                            <p class="float-right" style="font-size: 0.8rem;">{{n.type}}
                             </p>
                             <p class="text-muted float-right" style="font-size: 0.7rem;"> {{n.startDate}}-{{n.endDate}}</p>
                             <div>
-                              <button type="button" class="btn btn-primary btn-sm ms-1 float-start" style="margin: 0px;"><i class="bi bi-check-lg" ></i></button>
-                              <button type="button" class="btn btn-danger btn-sm ms-1 float-start" style="margin: 0px;" ><i class="bi bi-x-lg"></i></button>
+                              <button type="button" class="btn btn-primary btn-sm ms-1 float-start" style="margin: 0px;" (click)="accept(n)"><i class="bi bi-check-lg" ></i></button>
+                              <button type="button" class="btn btn-danger btn-sm ms-1 float-start" style="margin: 0px;" (click)="refuse(n)"><i class="bi bi-x-lg" (click)="refuse(n)"></i></button>
                             </div>
                           </div>
                         </div>
                         <div class="d-flex" *ngIf="n.type!='demande de conge'||n.accept!=null">
                           <img src="../../assets/avatar5.png" style="  width: 50px;height: 50px; border-radius: 50%;" >
                           <div >
-                            <h5 class="float-right">
-                              {{n.type}}
+                            <h6 class="float-right">
+                              {{n.username}}
+                            </h6>
                               <span class="float-right text-danger" style="font-size: 1rem;">
                               <div *ngIf="n.type!='demande de conge'||n.accept!=null" >
                                 <i class="bi bi-eye float-end " *ngIf="n.vue" style="color: rgb(0, 255, 106);"></i>
                                 <i class="bi bi-bell float-end" *ngIf="!n.vue" style="color: red"></i>
                               </div>
                               </span>
-                            </h5>
-                            <p class="float-right" style="font-size: 0.8rem;">{{n.cause}}
+                            
+                            <p class="float-right" style="font-size: 0.8rem;">{{n.type}}
                             </p>
                             <p class="text-muted float-right" style="font-size: 0.7rem;">{{n.startDate}}-{{n.endDate}}</p>
                           </div>

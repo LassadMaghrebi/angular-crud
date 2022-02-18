@@ -14,7 +14,7 @@
       "id": 2,
       "firstName": "jezia",
       "lastName": "jezia",
-      "email": "lefkihlefkih123@gmail.com",
+      "email": "36",
       "mobile": "58287043",
       "salary": 0,
       "password": "123",
@@ -47,8 +47,9 @@
       "name": "minifoot",
       "description": "design and developpement of a minifoot webapp ",
       "team": [
+        3,
         2,
-        3
+        1
       ],
       "status": "done",
       "leader": 2,
@@ -62,11 +63,50 @@
       "leader": 2,
       "team": [
         2,
-        3
+        3,
+        1
       ],
       "startDate": "2022-01-18",
       "endDate": "2022-02-09",
       "id": 2
+    },
+    {
+      "name": "jgvhgvhk",
+      "description": "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+      "status": "enretard",
+      "leader": 1,
+      "team": [
+        2,
+        3
+      ],
+      "startDate": "2022-02-17",
+      "endDate": "2022-02-24",
+      "id": 3
+    },
+    {
+      "name": "",
+      "description": "",
+      "status": "encours",
+      "leader": 1,
+      "team": [
+        2,
+        3
+      ],
+      "startDate": "",
+      "endDate": "",
+      "id": 4
+    },
+    {
+      "name": "aaaaaaaaaaaaa",
+      "description": "bbbbbbbbbbbbbb",
+      "status": "blocked",
+      "leader": 2,
+      "team": [
+        1
+      ],
+      "startDate": "2022-02-19",
+      "endDate": "2022-02-23",
+      "id": 5
     }
   ],
   "notifications": [
@@ -76,86 +116,8 @@
       "to": [
         3
       ],
-      "type": "demande de conge",
-      "startDate": "2022-01-18",
-      "endDate": "2022-05-28",
-      "cause": "maladie",
-      "vue": true,
-      "accept": true
-    },
-    {
-      "id": 2,
-      "from": 2,
-      "to": [
-        3
-      ],
       "type": "Acceptation de demande de conge",
       "vue": true
-    },
-    {
-      "from": "3",
-      "to": [
-        4
-      ],
-      "type": "demande de conge",
-      "cause": "hgfhghghj",
-      "startDate": "2022-02-17",
-      "endDate": "2022-02-25",
-      "vue": true,
-      "accept": false,
-      "id": 5
-    },
-    {
-      "from": 3,
-      "to": [
-        4
-      ],
-      "type": "New Project",
-      "cause": "mdsklksdlwkmc",
-      "startDate": "2022-02-17",
-      "endDate": "2022-02-25",
-      "vue": true,
-      "accept": null,
-      "id": 10
-    },
-    {
-      "from": "3",
-      "to": [
-        4
-      ],
-      "type": "demande de conge",
-      "cause": "hghkjgjjh",
-      "startDate": "2022-02-10",
-      "endDate": "2022-02-26",
-      "vue": false,
-      "accept": null,
-      "id": 6
-    },
-    {
-      "from": "4",
-      "to": [
-        4
-      ],
-      "type": "demande de conge",
-      "cause": "hhhhhhhhhhhhhhh",
-      "startDate": "2022-02-12",
-      "endDate": "2022-02-26",
-      "vue": true,
-      "accept": false,
-      "id": 7
-    },
-    {
-      "from": 4,
-      "to": [
-        4
-      ],
-      "type": "demande de conge",
-      "cause": "fffffffffffffffffffffffffffffffff",
-      "startDate": "2022-02-05",
-      "endDate": "2022-02-25",
-      "vue": true,
-      "accept": false,
-      "id": 8
     },
     {
       "from": 4,
@@ -166,9 +128,24 @@
       "cause": "azlekk,lzdsk",
       "startDate": "1999-02-23",
       "endDate": "2022-02-12",
-      "vue": false,
-      "accept": null,
-      "id": 9
+      "vue": true,
+      "accept": true,
+      "id": 2,
+      "username": "Lassad"
+    },
+    {
+      "from": 4,
+      "to": [
+        1,
+        2,
+        3
+      ],
+      "type": "New Project",
+      "startDate": "2022-02-19",
+      "endDate": "2022-02-23",
+      "vue": true,
+      "id": 3,
+      "username": "Lassad"
     }
   ],
   "profile": {

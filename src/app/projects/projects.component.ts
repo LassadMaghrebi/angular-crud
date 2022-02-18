@@ -21,6 +21,9 @@ export class ProjectsComponent implements OnInit {
   employes:Employe[]=[]
   project:any
   projectForm!: FormGroup;
+  visible=false
+  teams:Employe[]=[]
+  emps:any=[]
   ngOnInit(): void {
     this.projectForm = this.formbuilder.group({
       id: [''],
@@ -47,7 +50,6 @@ export class ProjectsComponent implements OnInit {
     this.http.get("http://localhost:3000/projects").subscribe((res:any)=>{
       res.forEach((element:Project) => {
         if(this.filter!=null){
-          console.log(this.filter)
           if(element.status==this.filter)this.projects.push(element)
         }else{
           this.projects.push(element)
@@ -67,6 +69,11 @@ export class ProjectsComponent implements OnInit {
     return  Days
   }
   updateProject(){
+    this.projectForm.value.team=[]
+    this.teams.forEach(element => {
+      this.projectForm.value.team.push(element.id)
+    })
+    this.projectForm.value.leader=parseInt(this.projectForm.value.leader)
     this.project= this.projectForm.value;
     this.http.patch<any>("http://localhost:3000/projects/"+this.projectForm.value.id,this.project).subscribe((res:any)=>{
       this.getProjects()
@@ -80,6 +87,41 @@ export class ProjectsComponent implements OnInit {
   }
   reset(e:Project){
     this.projectForm.setValue(e)
+    this.teams=[]
+    e.team.forEach((element:any) => {
+      this.employes.forEach(emp => {
+        if(emp.id==element) this.teams.push(emp)
+      });
+    });
     //this.employeForm.reset()
+  }
+  input(e:any){
+    this.emps=[]
+    this.employes.forEach(element => {
+      if(element.firstName.search(e.target.value)!=-1){
+        this.emps.push(element)
+        this.visible=true
+      }
+    });
+  }
+  addChip(e:any){
+    if(this.teams.indexOf(e)==-1||this.teams.length==0){
+      this.visible=false
+      this.teams.push(e)
+    }
+  }
+  removeChip(e:Employe){
+    this.teams.splice(this.teams.indexOf(e),1)
+  }
+  blure(){
+    this.emps=[]
+    this.visible=false
+  }
+  getName(t:any){
+    let a=""
+    this.employes.forEach((element:any) => {
+      if(element.id==t) a=element.firstName
+    })
+  return a
   }
 }

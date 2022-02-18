@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth:AuthentificationService,private http:HttpClient) {
     auth.IsLoggedIn().subscribe(res=>{
       this.isAuth=res
-      console.log(res)
+      this.getNotification()
     })
     auth.IsAdmin().subscribe(res=>{
       this.isAdmin=res
@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
     //this.isAdmin=sessionStorage.getItem('role')=="Admin"
     //console.log(this.isAdmin)
     this.getNotification()
+    
   }
   getNotification(){
     this.notifications=[]
@@ -39,10 +40,17 @@ export class NavbarComponent implements OnInit {
         res.forEach((element:any) => {
           if(element.to.indexOf(userId)!=-1&& !element.vue) this.notificationsNumber++
           if(element.to.indexOf(userId)!=-1)this.notifications.push(element)
-          console.log(this.notifications.length==0)
+          this.notifications.forEach((element:any) => {
+            this.http.get<any>("http://localhost:3000/Users/"+element.from).subscribe(res=>{
+              element.username=res.firstName
+            })
+          });
         });
+
+       
       })
     }
+    
   }
   vue(){
     this.notifications.forEach((element:any) => {
@@ -70,6 +78,7 @@ export class NavbarComponent implements OnInit {
     })
   }
   deconnection(){
+    this.notifications=[]
     this.auth.logOut()
   }
 }

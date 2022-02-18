@@ -142,11 +142,27 @@
                 <div class="form-group">
                   <label for="inputStatus">Status</label>
                   <select id="inputStatus" formControlName="status" class="form-control custom-select">
-                  <option>En Cours</option>
-                  <option>Blocked</option>
-                  <option>En Retard</option>
-                  <option>Done</option>
+                    <option value="encours">En Cours</option>
+                    <option value="blocked">Blocked</option>
+                    <option value="enretard">En Retard</option>
+                    <option value="done">Done</option>
                   </select>
+                  </div>
+                  <div class="form-group" style="border:2px solid rgb(207, 201, 201);border-radius: 5px;"  (mouseleave)="blure()">
+                    <div class="text-center">Project Teams</div>
+                    <div class="chips">
+                      <div class="chip mx-1" *ngFor="let e of teams">
+                        <img src="../../assets/avatar5.png" alt="Person" width="96" height="96">
+                        {{e.firstName}}
+                        <span class="closebtn" (click)="removeChip(e)">&times;</span>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" (input)="input($event)">
+                    <div *ngIf="visible" >
+                      <ul class="list-group"  *ngFor="let e of emps">
+                          <div class="list-group-item" (click)="addChip(e)">{{e.firstName}}</div>
+                      </ul>
+                  </div>
                   </div>
                   <div class="form-group">
                     <label for="inputStatus">Project Leader</label>
@@ -154,7 +170,7 @@
                     <option selected disabled>Select one</option>
                     <option *ngFor="let e of employes" value="{{e.id}}">{{e.firstName}}</option>
                     </select>
-                    </div>
+                  </div>
 
                 <div class="form-group">
                   <label for="inputName" >Start Date</label>

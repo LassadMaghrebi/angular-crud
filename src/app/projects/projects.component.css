@@ -5,3 +5,88 @@
     vertical-align: middle;
     border-style: none;
 }
+.chip {
+    display: inline-block;
+    padding-left:25px;
+    padding-right:5px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+  }
+.chips{
+    min-height: 50px;
+    margin: 10px;
+}
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  .closebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .closebtn:hover {
+    color: #000;
+  }
+  
+
+
+
+  .tooltipe {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipe .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltipe .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltipe:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.liste{
+  height: 200px; 
+  overflow-y: scroll;
+}
+.liste::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 4px;
+}
+.liste::-webkit-scrollbar-thumb {
+  background: #f21e4e;
+  border-radius: 4px;
+}
