@@ -39,6 +39,16 @@
       "salary": 1,
       "password": "123",
       "role": "Admin"
+    },
+    {
+      "firstName": "amine",
+      "lastName": "bayouli",
+      "email": "amine@gmail.com",
+      "mobile": 2,
+      "salary": "",
+      "password": "123",
+      "role": "Employe",
+      "id": 5
     }
   ],
   "projects": [
@@ -107,6 +117,19 @@
       "startDate": "2022-02-19",
       "endDate": "2022-02-23",
       "id": 5
+    },
+    {
+      "name": "bbbbbbbbb",
+      "description": "bbbbbbbbbb",
+      "status": "encours",
+      "leader": 1,
+      "team": [
+        5,
+        1
+      ],
+      "startDate": "2022-02-18",
+      "endDate": "2022-02-28",
+      "id": 6
     }
   ],
   "notifications": [
@@ -145,6 +168,19 @@
       "endDate": "2022-02-23",
       "vue": true,
       "id": 3,
+      "username": "Lassad"
+    },
+    {
+      "from": 4,
+      "to": [
+        5,
+        1
+      ],
+      "type": "New Project",
+      "startDate": "2022-02-18",
+      "endDate": "2022-02-28",
+      "vue": true,
+      "id": 4,
       "username": "Lassad"
     }
   ],

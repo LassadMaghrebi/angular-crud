@@ -32,3 +32,20 @@
   .closebtn:hover {
     color: #000;
   }
+  .tooltipe:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .liste{
+    height: 200px; 
+    overflow-y: scroll;
+  }
+  .liste::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 4px;
+  }
+  .liste::-webkit-scrollbar-thumb {
+    background: #f21e4e;
+    border-radius: 4px;
+  }

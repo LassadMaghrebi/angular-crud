@@ -117,7 +117,7 @@
                           <span class="closebtn" (click)="removeChip(e)">&times;</span>
                         </div>
                       </div>
-                      <input type="text" class="form-control" (input)="input($event)">
+                      <input type="text" class="form-control" (focus)="visible=true;emps=employes" (input)="input($event)">
                       <div *ngIf="visible" class="liste">
                         <ul class="list-group"  *ngFor="let e of emps">
                             <div class="list-group-item" (click)="addChip(e)">{{e.firstName}}</div>

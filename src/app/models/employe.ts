@@ -6,7 +6,7 @@ export class Employe{
     mobile:String
     salary:number
     role:String
-    constructor(id:number,name:String,firstName:String,lastName:String,email:String,mobile:String,salary:number,role:String){
+    constructor(id:number=0,firstName:String="",lastName:String="",email:String="",mobile:String="",salary:number=0,role:String=""){
         this.id=id
         this.firstName=firstName
         this.lastName=lastName
@@ -15,5 +15,4 @@ export class Employe{
         this.salary=salary
         this.role=role
     }
-
 }

@@ -101,7 +101,7 @@
   <div class="col-md-3 col-sm-6 my-1">
     <div class="card bg-danger" style="color: #fff!important;">
       <div class="inner">
-        <h3>{{retardProject}}</h3>
+        <h3>0</h3>
         <p>Inactive Employes</p>
       </div>
       <a [routerLink]="['/employes']" class=" card-footer text-center" style="width:100%;text-decoration: none;color: #fff;">More info <i class="bi bi-arrow-right-circle-fill"></i></a>
@@ -157,8 +157,8 @@
                         <span class="closebtn" (click)="removeChip(e)">&times;</span>
                       </div>
                     </div>
-                    <input type="text" class="form-control" (input)="input($event)">
-                    <div *ngIf="visible" >
+                    <input type="text" class="form-control"(focus)="visible=true;emps=employes"  (input)="input($event)">
+                    <div *ngIf="visible" class="liste">
                       <ul class="list-group"  *ngFor="let e of emps">
                           <div class="list-group-item" (click)="addChip(e)">{{e.firstName}}</div>
                       </ul>

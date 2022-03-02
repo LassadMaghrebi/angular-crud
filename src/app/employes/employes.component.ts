@@ -13,7 +13,7 @@ export class EmployesComponent implements OnInit {
   employeForm!: FormGroup;
   constructor(private http:HttpClient,private router:Router,private formbuilder: FormBuilder) { }
   employes:Employe[]=[]
-  employe:any
+  employe:Employe=new Employe()
   ngOnInit(): void {
     this.employeForm = this.formbuilder.group({
       id: [''],
@@ -36,7 +36,7 @@ export class EmployesComponent implements OnInit {
     })
   }
   click(p:number){
-    this.router.navigateByUrl('/project/'+p)
+    this.router.navigateByUrl('/employe/'+p)
   }
   updateEmploye(){
     this.employe=this.employeForm.value
@@ -48,17 +48,9 @@ export class EmployesComponent implements OnInit {
   delete(e:number){
     this.http.delete("http://localhost:3000/Users/"+e).subscribe((res:any)=>{
   })
-  this.getEmployes()
+  this.getEmployes() 
   }
   reset(e:Employe){
     this.employeForm.setValue(e)
-    // this.employeForm.controls["id"].setValue(e.id);
-    // this.employeForm.controls["firstName"].setValue(e.firstName);
-    // this.employeForm.controls["lastName"].setValue(e.lastName);
-    // this.employeForm.controls["email"].setValue(e.email);
-    // this.employeForm.controls["mobile"].setValue(e.mobile);
-    // this.employeForm.controls["salary"].setValue(e.salary);
-    // this.employeForm.controls["role"].setValue(e.role);
-    //this.employeForm.reset()
   }
 }
